@@ -1,3 +1,9 @@
+# Copyright (C) 2024 DX-MODS
+#Licensed under the  MIT License;
+#you may not use this file except in compliance with the License.
+#Author ZIYAN
+#if you use our codes try to donate here https://www.buymeacoffee.com/ziyankp
+
 import os
 import asyncio
 from asyncio import TimeoutError
@@ -66,7 +72,7 @@ async def private_receive_handler(c: Client, m: Message):
             if user.status == "kicked":
                 await c.send_message(
                     chat_id=m.chat.id,
-                    text="You are banned!\n\n  **Cᴏɴᴛᴀᴄᴛ Support [Support](https://t.me/DXMODS_Support) They Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
+                    text="You are banned!\n\n  **Cᴏɴᴛᴀᴄᴛ Support [Support](https://t.me/Dx_Mods_Discussion) They Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
                     
                     disable_web_page_preview=True
                 )
@@ -89,7 +95,7 @@ async def private_receive_handler(c: Client, m: Message):
             await m.reply_text(e)
             await c.send_message(
                 chat_id=m.chat.id,
-                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ Support** [Support](https://t.me/DXMODS_Support)",
+                text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍʏ Support** [Support](https://t.me/Dx_Mods_Discussion)",
                 
                 disable_web_page_preview=True)
             return
