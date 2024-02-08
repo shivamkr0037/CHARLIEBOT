@@ -11,7 +11,6 @@ import time
 import shutil, psutil
 from utils_bot import *
 from Dxbots import StartTime
-from apscheduler.schedulers.background import BackgroundScheduler
 from requests import get 
 
 START_TEXT = """ Your Telegram DC Is : `{}`  """
