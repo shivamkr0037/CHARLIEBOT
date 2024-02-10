@@ -27,27 +27,27 @@ pass_db = Database(Var.DATABASE_URL, "ag_passwords")
 
 
 @DxStreamBot.on_message((filters.regex("login🔑") | filters.command("login")) , group=4)
-async def login_handler(c: Client, m: Message): # Added a colon here
+async def login_handler(c: Client, m: Message):
     try:
         try:
             ag = await m.reply_text("Now send me password.\n\n If You don't know check the MY_PASS Variable in heroku \n\n(You can use /cancel command to cancel the process)")
-            _text = await c.idle(m.chat.id, filters=filters.text, timeout=90) # Replaced listen with idle
+            _text = await c.listen(m.chat.id, filters=filters.text, timeout=90)
             if _text.text:
                 textp = _text.text
                 if textp == "/cancel":
-                   await ag.edit_text("Process Cancelled Successfully") # Replaced edit with edit_text
+                   await ag.edit("Process Cancelled Successfully")
                    return
             else:
                 return
         except TimeoutError:
-            await ag.edit_text("I can't wait more for password, try again") # Replaced edit with edit_text
+            await ag.edit("I can't wait more for password, try again")
             return
         if textp == MY_PASS:
             await pass_db.add_user_pass(m.chat.id, textp)
             ag_text = "yeah! you entered the password correctly"
         else:
             ag_text = "Wrong password, try again"
-        await ag.edit_text(ag_text) # Replaced edit with edit_text
+        await ag.edit(ag_text)
     except Exception as e:
         print(e)
 
