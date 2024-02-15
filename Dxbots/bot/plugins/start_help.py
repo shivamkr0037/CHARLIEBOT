@@ -134,7 +134,7 @@ async def help_handler(bot, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("💁‍♂️ Owner", url="https://github.com/shivamkr0037")],
-                [InlineKeyboardButton("💥 Source Code", url="https://github.com/shivamkr0037/CHARLIEBOT")]
+                [InlineKeyboardButton("💥 Source Code", url="https://graph.org/file/46b46fe49516323767338.jpg")]
             ]
         )
     )
